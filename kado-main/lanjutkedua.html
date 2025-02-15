@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Dark Mode</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #ff4d6d;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff708d;
+        }
+
+        .gallery {
+            display: none;
+            margin-top: 20px;
+            width: 90%;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            white-space: nowrap; /* Prevent images from wrapping to the next line */
+        }
+
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin-right: 10px; /* Add spacing between images */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            display: inline-block; /* Ensure images are displayed inline */
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .flower-button {
+            margin-top: 20px;
+        }
+
+        .flower {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('https://i.imgur.com/6LX8q3z.png'); /* Placeholder for flower image */
+            background-size: cover;
+            animation: fall linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1>💖 Foto-foto kamu lucu bangettt 💖</h1>
+    <button id="musicButton">Play Music & Show Memories</button>
+
+    <div class="gallery" id="gallery">
+        <img src="foto/1.jpg" alt="Memory 1">
+        <img src="foto/2.jpg" alt="Memory 1">
+        <img src="foto/3.jpg" alt="Memory 1">
+        <img src="foto/4.jpg" alt="Memory 1">
+        <img src="foto/5.jpg" alt="Memory 1">
+        <img src="foto/6.jpg" alt="Memory 1">
+        <img src="foto/7.jpg" alt="Memory 1">
+        
+    </div>
+
+    <div class="message" id="message">
+        "terima kasih ya udah bertahan sejauh ini, kamu hebat udah survive selama kuliah, aku harap selanjutnyaa kamu teruss bertahan yaa, dan jangan merasa sendiri. you have me now, so kamu bisa gunain aku  ❤️"
+    </div>
+
+    <audio id="backgroundMusic" src="Music/best part.mp3"></audio>
+
+    <button class="flower-button" id="flowerButton">Bunga untuk Kamu 🌸</button>
+
+    <script>
+        const musicButton = document.getElementById('musicButton');
+        const gallery = document.getElementById('gallery');
+        const message = document.getElementById('message');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+
+        musicButton.addEventListener('click', () => {
+            // Play music
+            backgroundMusic.play();
+
+            // Show gallery
+            gallery.style.display = 'flex';
+
+            // Change button text
+            musicButton.textContent = 'Enjoy the Memories';
+            musicButton.disabled = true;
+
+            // Show message
+            message.style.display = 'block';
+        });
+
+         // Redirect to the next page when "Bunga untuk Kamu" is clicked
+         flowerButton.addEventListener('click', () => {
+            window.location.href = 'flower.html'; // Ganti dengan URL halaman berikutnya
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            position: absolute;
+            top: 20px;
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        button {
+            background-color: #ff6f61;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff3b2f;
+            transform: scale(1.1);
+        }
+
+        .tombol {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tombol button {
+            background-color: #4CAF50; /* Warna latar belakang hijau */
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 25px; /* Sudut melengkung */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan */
+            transition: background-color 0.3s, transform 0.3s; /* Transisi */
+        }
+
+        .message {
+            margin-top: 50px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .message.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1) translate(-50%, -50%);
+            }
+            50% {
+                transform: scale(1.2) translate(-50%, -50%);
+            }
+            100% {
+                transform: scale(1) translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HAPPY VALENTINE'S DAY NISAAA ❤️</h1>
+        <button id="playButton">klik ini dulu</button>
+        <div id="message1" class="message">Hai maaf yaa aku baru selesai bikin project ini. ini spesial buat kamuuuu nisaaa</div>
+        <div id="message2" class="message">Terima kasih sudah hadir dihidupku</div>
+        <div id="message3" class="message">kedepannyaaa walau banyak badaii tetap sama aku terus yaa</div>
+        <div id="message4" class="message">sekarang pencet tombol yang disamping ini</div>
+        <div class="heart"></div>
+    </div>
+
+    <audio id="music" src="Music/ariana.mp3"></audio>
+
+    <script>
+        const playButton = document.getElementById('playButton');
+        const music = document.getElementById('music');
+        const messages = [
+            document.getElementById('message1'),
+            document.getElementById('message2'),
+            document.getElementById('message3'),
+            document.getElementById('message4')
+        ];
+
+        let isPlaying = false;
+
+        playButton.addEventListener('click', () => {
+            if (!isPlaying) {
+                music.play();
+                isPlaying = true;
+                playButton.textContent = 'Music Playing...';
+
+                // Show messages with delay
+                messages.forEach((message, index) => {
+                    setTimeout(() => {
+                        message.classList.add('active');
+                    }, 1000 * (index + 1));
+                });
+            } else {
+                music.pause();
+                isPlaying = false;
+                playButton.textContent = 'Play Music';
+            }
+        });
+    </script>
+
+<div class="tombol">
+    <button>
+        <a href="lanjutkedua.html">lanjut klik ini</a>
+    </button>
+</div>
+
+</body>
+</html>

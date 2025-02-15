@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon" alt="Flower Icon">
+    <title>Flowers</title>
+    <style>
+        /* Menghilangkan garis bawah dari tautan */
+        a {
+            text-decoration: none;
+            color: inherit; /* Menggunakan warna teks yang sama dengan elemen induk */
+        }
+
+        /* Gaya untuk tombol modern */
+        .button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button button {
+            background-color: #4CAF50; /* Warna latar belakang hijau */
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 25px; /* Sudut melengkung */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan */
+            transition: background-color 0.3s, transform 0.3s; /* Transisi */
+        }
+
+        /* Hover effect untuk tombol */
+        .button button:hover {
+            background-color: #45a049; /* Warna latar belakang lebih gelap saat hover */
+            transform: translateY(-2px); /* Efek angkat */
+        }
+
+        /* Gaya untuk pemutar musik */
+        .music-player {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .music-player audio {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="greetings">
+        <span>H</span>
+        <span>A</span>
+        <span>L</span>
+        <span>L</span>
+        <span>O</span>
+        <span>N</span>
+        <span>I</span>
+        <span>S</span>
+        <span>A</span>
+    </div>
+    <div class="description">
+        <span><strong>Aku ada hadiah spesial buat kamu!!</strong></span>
+    </div>
+    <script>
+        // Mendapatkan elemen audio dan tombol
+        var audio = document.getElementById('audio');
+        var playButton = document.getElementById('playButton');
+
+        // Menambahkan event listener untuk tombol
+        playButton.addEventListener('click', function() {
+            audio.play().catch(function(error) {
+                console.error("Error playing audio:", error);
+            });
+        });
+    </script>
+
+    <div class="button">
+        <button>
+            <a href="pagelanjut.html">Klik disini</a>
+        </button>
+    </div>
+</body>
+</html>
